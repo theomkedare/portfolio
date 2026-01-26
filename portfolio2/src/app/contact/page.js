@@ -25,7 +25,7 @@ export default function ContactPage() {
         className="flex flex-col gap-4 mb-12"
       >
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="http://localhost:3000/thanks" />
+        <input type="hidden" name="_next" value="http://omkedare.dev/thanks" />
         <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
 
         <input
