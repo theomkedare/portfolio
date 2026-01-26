@@ -14,7 +14,7 @@ export default function ContactPage() {
     >
       <h2 className="text-4xl mb-8">Contact</h2>
 
-      <p className="text-black mb-12">
+      <p className="mt-2 px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition">
         Send me a message using the form below or reach out on social platforms.
       </p>
 
