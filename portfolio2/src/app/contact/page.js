@@ -14,8 +14,8 @@ export default function ContactPage() {
     >
       <h2 className="text-4xl mb-8">Contact</h2>
 
-      <p className="text-black mb-12">
-        Send me a message using the form below or reach out on social platforms.
+      <p className="text-white mb-12">
+        Feel free to send me a message using the form below or reach out on social platforms.
       </p>
 
       {/* Contact Form */}
@@ -25,7 +25,7 @@ export default function ContactPage() {
         className="flex flex-col gap-4 mb-12"
       >
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="http://localhost:3000/thanks" />
+        <input type="hidden" name="_next" value="http://omkedare.dev/thanks" />
         <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
 
         <input
