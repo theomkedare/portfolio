@@ -6,19 +6,25 @@ const projects = [
   {
     title: "YouTube Downloader",
     desc: "Web app to download YouTube shorts & reels.",
-    github: "https://github.com/omkedare/yt-downloader",
+    github: "https://github.com/theomkedare/yt-downloader",
     demo: "https://reels-downloader-by-om.netlify.app/",
   },
   {
     title: "Gym demo Website",
     desc: "A demo Website for Gym.",
-    github: "https://github.com/omkedare/ai-video",
+    github: "https://github.com/theomkedare/gymDemo",
     demo: "https://omgymwebdemo.netlify.app/",
+  },
+  {
+    title: "React demoPortfolio Website",
+    desc: "My ReactJS final project demoPortfolio built with React.js.",
+    github: "https://github.com/theomkedare/react-portfolio",
+    demo: "https://theomkedare.github.io/react-portfolio/",
   },
   {
     title: "Portfolio Website",
     desc: "My personal modern portfolio built with Next.js.",
-    github: "https://github.com/omkedare/portfolio",
+    github: "https://github.com/theomkedare/portfolio",
     demo: "https://omkedare.dev",
   },
 ];

@@ -16,6 +16,12 @@ const projects = [
     demo: "https://omgymwebdemo.netlify.app/",
   },
   {
+    title: "React demoPortfolio Website",
+    desc: "My personal modern portfolio built with Next.js.",
+    github: "https://github.com/omkedare/portfolio",
+    demo: "https://theomkedare.github.io/react-portfolio/",
+  },
+  {
     title: "Portfolio Website",
     desc: "My personal modern portfolio built with Next.js.",
     github: "https://github.com/omkedare/portfolio",

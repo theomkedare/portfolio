@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
-  metadataBase: new URL("http://localhost:3000"), // later change to your real domain
+  metadataBase: new URL("http://omkedare.dev/thanks"), // later change to your real domain
 
   title: "Om Kedare | Web Developer & CSE Student",
   description:
@@ -82,6 +82,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
+        <Analytics />
       </body>
     </html>
   );
