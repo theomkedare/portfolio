@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function SkillsPage() {
-  const skills = ["Next.js","Tailwind","Python","C","HTML","CSS","JavaScript","React","Java","SQL","R"];
+  const skills = ["Next.js","Tailwind","Python","C","HTML","CSS","JavaScript","React.js","Java","SQL","R","Git","Express.js","Node.js","MongoDB","MERN stack","AI tools","Full Stack Development","Web Development"];
 
   return (
     <motion.section

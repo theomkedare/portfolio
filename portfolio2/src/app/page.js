@@ -48,13 +48,13 @@ export default function Home() {
 
         <div className="flex justify-center gap-6">
           <a
-            href="#projects"
+            href="/projects"
             className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition"
           >
             View Projects
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition"
           >
             Contact Me
@@ -128,10 +128,18 @@ export default function Home() {
             "HTML",
             "CSS",
             "JavaScript",
-            "React",
+            "React.js",
             "Java",
             "SQL",
             "R",
+            "Git",
+            "Express.js",
+            "Node.js",
+            "MongoDB",
+            "MERN stack",
+            "AI tools",
+            "Full Stack Development",
+            "Web Development",
           ].map((skill) => (
             <motion.span
               key={skill}
