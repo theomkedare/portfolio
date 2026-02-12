@@ -54,6 +54,12 @@ export default function Home() {
             View Projects
           </a>
           <a
+            href="/cetificates"
+            className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition"
+          >
+            View Certificates
+          </a>
+          <a
             href="/contact"
             className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition"
           >
