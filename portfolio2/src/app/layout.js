@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
-  metadataBase: new URL("http://omkedare.dev/thanks"), // later change to your real domain
+  metadataBase: new URL("http://omkedare.dev"), // later change to your real domain
 
   title: "Om Kedare | Web Developer & CSE Student",
   description:
@@ -59,10 +59,13 @@ export default function RootLayout({ children }) {
 
         {/* Navbar */}
         <nav className="flex justify-between items-center px-6 sm:px-10 py-4 backdrop-blur border-b border-white/10 sticky top-0 z-50">
-          <h1 className="text-xl font-bold">omkedare.dev</h1>
+          <a href="/" className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            omkedare.dev
+          </a>
           <div className="space-x-6 text-gray-400">
             <Link href="/" className="hover:text-white">Home</Link>
             <Link href="/projects" className="hover:text-white">Projects</Link>
+            <Link href="/certificates" className="hover:text-white">Certificates</Link>
             <Link href="/skills" className="hover:text-white">Skills</Link>
             <Link href="/contact" className="hover:text-white">Contact</Link>
             <a

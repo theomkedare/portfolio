@@ -6,7 +6,7 @@ const projects = [
   {
     title: "YouTube Downloader",
     desc: "Web app to download YouTube shorts & reels.",
-    github: "https://github.com/theomkedare/yt-downloader",
+    github: "https://github.com/theomkedare/reels-downloader-ui",
     demo: "https://reels-downloader-by-om.netlify.app/",
   },
   {
