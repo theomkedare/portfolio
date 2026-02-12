@@ -24,7 +24,7 @@ export default function Certificates() {
         {
             id: 3,
             title: "Introduction to Image Processing",
-            issuer: "Matlab",
+            issuer: "MathWorks",
             date: "Jan 2026",
             image: "/certificates/Coursera ImgProc.jpg",
             credentialUrl: "https://coursera.org/verify/BZ2DCILG6V5L",
