@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Cafe demo Website",
+    desc: "A demo Website for a Cafe.",
+    github: "https://github.com/theomkedare/dreamy-sip-cafe",
+    demo: "https://dreamysip.netlify.app/",
+  },
+  {
     title: "YouTube Downloader",
     desc: "Web app to download YouTube shorts & reels.",
     github: "https://github.com/theomkedare/reels-downloader-ui",

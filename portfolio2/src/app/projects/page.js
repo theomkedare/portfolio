@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Cafe demo Website",
+    desc: "A demo Website for a Cafe.",
+    github: "https://github.com/theomkedare/dreamy-sip-cafe",
+    demo: "https://dreamysip.netlify.app/",
+  },
+  {
     title: "YouTube Downloader",
     desc: "Web app to download YouTube shorts & reels.",
     github: "https://github.com/theomkedare/reels-downloader-ui",
@@ -12,13 +18,13 @@ const projects = [
   {
     title: "Gym demo Website",
     desc: "A demo Website for Gym.",
-    github: "https://github.com/theomkedare/ai-video",
+    github: "https://github.com/theomkedare/gymDemo",
     demo: "https://omgymwebdemo.netlify.app/",
   },
   {
     title: "React demoPortfolio Website",
     desc: "My personal modern portfolio built with Next.js.",
-    github: "https://github.com/theomkedare/portfolio",
+    github: "https://github.com/theomkedare/react-portfolio",
     demo: "https://theomkedare.github.io/react-portfolio/",
   },
   {
