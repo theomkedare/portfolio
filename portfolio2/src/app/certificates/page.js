@@ -101,6 +101,15 @@ export default function Certificates() {
             image: "/certificates/Coursera TechComer.jpg",
             credentialUrl: "https://coursera.org/verify/L2XFNI44Y6ON",
             skills: ["Technology Commercialization", "Idea Filtering", "Entrepreneurship"]
+        },
+        {
+          id: 12,
+          title: "Foundations: Data, Data, Everywhere",
+          issuer: "Google",
+          date: "Jan 2026",
+          image: "/certificates/Coursera FoundationData.jpg",
+          credentialUrl: "https://coursera.org/verify/92EBIL20T5PJ",
+          skills: ["Data Foundations", "Data Analysis", "Data Management"]
         }
     ];
 
