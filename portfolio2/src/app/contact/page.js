@@ -88,7 +88,7 @@ export default function ContactPage() {
   </a>
 
   <a
-    href="https://www.instagram.com/opxeditzz/"
+    href="https://www.instagram.com/omkedare.dev/"
     target="_blank"
     className="p-3 rounded-full border border-white/10 hover:bg-white/10 hover:scale-110 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition"
   >
