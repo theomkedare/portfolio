@@ -110,6 +110,15 @@ export default function Certificates() {
           image: "/certificates/Coursera FoundationData.jpg",
           credentialUrl: "https://coursera.org/verify/92EBIL20T5PJ",
           skills: ["Data Foundations", "Data Analysis", "Data Management"]
+        },
+        {
+          id: 13,
+          title: "HTML and CSS in Depth",
+          issuer: "Meta",
+          date: "Feb 2026",
+          image: "/certificates/Coursera HtmlCssInD.jpg",
+          credentialUrl: "https://coursera.org/verify/UMI3MYT0B6UN",
+          skills: ["HTML", "CSS", "Web Design", "Front-End Development"]
         }
     ];
 
