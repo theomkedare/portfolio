@@ -177,7 +177,7 @@ export default function Home() {
         className="text-center"
       >
         <h3 className="text-3xl mb-4">Contact</h3>
-        <p className="text-gray-400">omkedare65@gmail.com</p>
+        <p className="text-gray-400">omkedare.work@gmail.com</p>
         <p className="text-gray-500 text-sm mt-2">© 2026 Om Kedare</p>
       </motion.section>
     </>
