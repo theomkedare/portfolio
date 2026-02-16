@@ -126,6 +126,15 @@ const certificates = [
     credentialUrl: "https://coursera.org/verify/UMI3MYT0B6UN",
     skills: ["HTML", "CSS", "Web Design", "Front-End Development"],
   },
+  {
+    if: 14,
+    title: "Programming with JavaScript",
+    issuer: "Meta",
+    date: "Feb 2026",
+    image: "/certificates/Coursera ProgJs.jpg",
+    credentialUrl: "https://coursera.org/verify/QTDOYUXWK323",
+    skills: ["JavaScript", "Programming Fundamentals", "Web Development"],
+  }
 ];
 
 export default function Certificates() {
