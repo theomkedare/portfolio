@@ -131,7 +131,7 @@ const certificates = [
     title: "Programming with JavaScript",
     issuer: "Meta",
     date: "Feb 2026",
-    image: "/certificates/Coursera ProgJs.jpg",
+    image: "/certificates/Coursera ProgJS.jpg",
     credentialUrl: "https://coursera.org/verify/QTDOYUXWK323",
     skills: ["JavaScript", "Programming Fundamentals", "Web Development"],
   }
