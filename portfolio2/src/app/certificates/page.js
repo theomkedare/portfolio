@@ -127,7 +127,7 @@ const certificates = [
     skills: ["HTML", "CSS", "Web Design", "Front-End Development"],
   },
   {
-    if: 14,
+    id: 14,
     title: "Programming with JavaScript",
     issuer: "Meta",
     date: "Feb 2026",
