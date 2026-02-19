@@ -10,10 +10,10 @@ const projects = [
     demo: "https://dreamysip.netlify.app/",
   },
   {
-    title: "YouTube Downloader",
-    desc: "Web app to download YouTube shorts & reels.",
-    github: "https://github.com/theomkedare/reels-downloader-ui",
-    demo: "https://reels-downloader-by-om.netlify.app/",
+    title: "Instagram Reels Downloader",
+    desc: "Web app to download reels from Instagram.",
+    github: "https://github.com/theomkedare/reels-downloader",
+    demo: "https://reels-downloader-sepia.vercel.app/",
   },
   {
     title: "Gym demo Website",
