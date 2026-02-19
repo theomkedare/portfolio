@@ -13,7 +13,7 @@ const projects = [
     title: "Instagram Reels Downloader",
     desc: "Web app to download reels from Instagram.",
     github: "https://github.com/theomkedare/reels-downloader",
-    demo: "https://reels-downloader-sepia.vercel.app/",
+    demo: "https://reels.omkedare.dev/",
   },
   {
     title: "Gym demo Website",
