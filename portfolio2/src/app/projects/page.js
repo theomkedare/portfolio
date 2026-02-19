@@ -11,9 +11,15 @@ const projects = [
   },
   {
     title: "Instagram Reels Downloader",
-    desc: "Web app to download reels from Instagram.",
+    desc: "Full Stack Web app to download reels and videos from Instagram.",
     github: "https://github.com/theomkedare/reels-downloader",
-    demo: "https://reels-downloader-sepia.vercel.app/",
+    demo: "https://reels.omkedare.dev/",
+  },
+  {
+    title: "Smart Image Resizer Toolkit",
+    desc: "A Full Stack WebApp, where you can Resize your images in various formats.",
+    github: "https://github.com/theomkedare/smart-image-toolkit",
+    demo: "https://imagetools.omkedare.dev",
   },
   {
     title: "Gym demo Website",
