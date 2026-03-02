@@ -134,6 +134,15 @@ const certificates = [
     image: "/certificates/Coursera ProgJS.jpg",
     credentialUrl: "https://coursera.org/verify/QTDOYUXWK323",
     skills: ["JavaScript", "Programming Fundamentals", "Web Development"],
+  },
+  {
+    id: 15,
+    title: "Data Mining in Python",
+    issuer: "University of Michigan",
+    date: "Mar 2026",
+    image: "/certificates/Coursera DMIP.jpg",
+    credentialUrl: "https://coursera.org/verify/S8P5NYA7O6DU",
+    skills: ["Data Mining", "Python", "Data Analysis"],
   }
 ];
 
