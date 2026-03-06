@@ -25,7 +25,7 @@ const projects = [
     title: "Gym demo Website",
     desc: "A demo Website for Gym.",
     github: "https://github.com/theomkedare/gymDemo",
-    demo: "https://omgymwebdemo.netlify.app/",
+    demo: "https://gymdemo.omkedare.dev/",
   },
   {
     title: "React demoPortfolio Website",
