@@ -1,6 +1,11 @@
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";  // change path if needed
+import Navbar from "./components/Navbar";
+import Background from "./components/Background";
 import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "./components/ThemeContext";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL("http://omkedare.dev"),
@@ -43,20 +48,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="bg-[#050505] text-white overflow-x-hidden">
-        {/* Global glow background */}
-        <div className="fixed -top-32 -left-32 w-[500px] h-[500px] bg-purple-500/40 rounded-full blur-[160px] -z-10" />
-        <div className="fixed top-40 -right-32 w-[500px] h-[500px] bg-pink-500/30 rounded-full blur-[160px] -z-10" />
-        <div className="fixed bottom-0 left-1/3 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[160px] -z-10" />
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} selection:bg-purple-500/30 relative min-h-screen transition-colors duration-300`}>
+        <ThemeProvider>
+          <Background />
+          <Navbar />
 
-        {/* Navbar Component - replaces the old inline <nav> */}
-        <Navbar />
-
-        {/* Common page wrapper */}
-        <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-10 py-16">
-          {children}
-        </main>
+          <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-10 pt-32 pb-16">
+            {children}
+          </main>
+        </ThemeProvider>
 
         <Analytics />
       </body>
