@@ -4,11 +4,18 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "CSNotes",
+    desc: "A all in one place for CS Notes. Only for DYPIU Students.",
+    github: "https://github.com/theomkedare/csnotes",
+    demo: "https://csnotes.omkedare.dev/",
+    tech: ["Next.js", "Tailwind", "Motion"]
+  },
+  {
     title: "Cafe demo Website",
     desc: "A beautifully designed, responsive demo website for a modern cafe, featuring menu sections and contact forms.",
     github: "https://github.com/theomkedare/dreamy-sip-cafe",
     demo: "https://dreamysip.netlify.app/",
-    tech: ["HTML", "CSS", "JS"]
+    tech: ["React", "Tailwind", "JS"]
   },
   {
     title: "Smart Image Resizer",

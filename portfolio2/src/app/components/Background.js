@@ -29,7 +29,7 @@ export default function Background() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-blue-300/30 dark:bg-blue-600/15 rounded-full blur-[140px]"
+        className="absolute top-[-10%] left-[-10%] w-[300px] sm:w-[800px] h-[300px] sm:h-[800px] bg-blue-300/30 dark:bg-blue-600/15 rounded-full blur-[80px] sm:blur-[140px]"
       />
 
       {/* Secondary Drifting Blob - Purple */}
@@ -44,7 +44,7 @@ export default function Background() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-[-10%] right-[-10%] w-[900px] h-[900px] bg-purple-300/30 dark:bg-purple-600/15 rounded-full blur-[160px]"
+        className="absolute bottom-[-10%] right-[-10%] w-[350px] sm:w-[900px] h-[350px] sm:h-[900px] bg-purple-300/30 dark:bg-purple-600/15 rounded-full blur-[100px] sm:blur-[160px]"
       />
 
       {/* Tertiary Drifting Blob - Pink */}
@@ -59,7 +59,7 @@ export default function Background() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-pink-300/20 dark:bg-pink-600/10 rounded-full blur-[120px]"
+        className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[250px] sm:w-[600px] h-[250px] sm:h-[600px] bg-pink-300/20 dark:bg-pink-600/10 rounded-full blur-[60px] sm:blur-[120px]"
       />
 
       {/* Grain/Noise Overlay - slightly stronger for character */}

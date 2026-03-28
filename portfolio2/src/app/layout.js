@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Background from "./components/Background";
+import icon from "./favicon.png";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "./components/ThemeContext";
 
@@ -43,6 +44,11 @@ export const metadata = {
     description:
       "Modern developer portfolio of Om Kedare built using Next.js and Tailwind CSS.",
     images: ["/og.png"],
+  },
+  icons: {
+    icon: icon.src,
+    shortcut: icon.src,
+    apple: icon.src,
   },
 };
 

@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "CSNotes",
+    desc: "A all in one place for CS Notes. Only for DYPIU Students.",
+    github: "https://github.com/theomkedare/csnotes",
+    demo: "https://csnotes.omkedare.dev/",
+    tech: ["Next.js", "Tailwind", "Motion"]
+  },
+  {
     title: "Cafe demo Website",
     desc: "A demo Website for a Cafe.",
     github: "https://github.com/theomkedare/dreamy-sip-cafe",
@@ -62,25 +69,25 @@ export default function Home() {
           Open to new collaborations
         </motion.div>
 
-        <h1 className="text-6xl sm:text-8xl md:text-[11rem] font-black mb-8 tracking-tighter leading-[0.85]">
+        <h1 className="text-[4rem] sm:text-8xl md:text-[11rem] font-black mb-8 tracking-tighter leading-[0.85] uppercase">
           I&apos;m <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent px-2">OM</span>
         </h1>
         
-        <p className="text-gray-600 dark:text-white/60 text-lg sm:text-2xl max-w-3xl mx-auto mb-16 px-4 leading-snug font-medium">
+        <p className="text-gray-600 dark:text-white/60 text-base sm:text-2xl max-w-3xl mx-auto mb-16 px-6 leading-snug font-medium">
           Engineering high-performance web experiences with 
           <span className="text-black dark:text-white"> Next.js</span>, <span className="text-black dark:text-white">Full Stack</span> systems, and <span className="text-black dark:text-white">AI-driven</span> automation.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-[240px] sm:max-w-none">
           <a
             href="/projects"
-            className="w-full sm:w-auto px-10 py-5 rounded-3xl bg-black dark:bg-white text-white dark:text-black font-black text-lg hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-2xl active:scale-95 text-center"
+            className="px-6 py-3 rounded-2xl bg-black dark:bg-white text-white dark:text-black font-black text-sm hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-2xl active:scale-95 text-center"
           >
             BEHOLD PROJECTS
           </a>
           <a
             href="/contact"
-            className="w-full sm:w-auto px-10 py-5 rounded-3xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-md font-black text-lg text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 transform hover:scale-105 active:scale-95 text-center"
+            className="px-6 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-md font-black text-sm text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 transform hover:scale-105 active:scale-95 text-center"
           >
             LET&apos;S TALK
           </a>
@@ -101,9 +108,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="p-8 rounded-[32px] border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01] text-center"
+            className="p-6 sm:p-8 rounded-[32px] border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01] text-center"
           >
-            <div className="text-3xl font-black text-black dark:text-white mb-1 tracking-tighter italic">{stat.value}</div>
+            <div className="text-2xl sm:text-3xl font-black text-black dark:text-white mb-1 tracking-tighter italic">{stat.value}</div>
             <div className="text-[10px] font-black uppercase tracking-widest text-gray-500">{stat.label}</div>
           </motion.div>
         ))}

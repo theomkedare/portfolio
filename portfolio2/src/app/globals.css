@@ -91,81 +91,11 @@ body {
   display: block;
 }
 
-/* ===== MOBILE BREAKPOINT ===== */
+/* ===== MOBILE BREAKPOINT OVERRIDES REMOVED TO ALLOW TAILWIND FLEXIBILITY ===== */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav ul,
-  nav .nav-links,
-  .navbar ul,
-  .navbar .nav-links,
-  header nav ul,
-  header nav>div:last-child,
-  nav>ul,
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: rgba(15, 15, 15, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem !important;
-    transition: right 0.4s ease;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 999;
-    padding: 2rem;
-  }
-
-  nav ul.active,
-  nav .nav-links.active,
-  .navbar ul.active,
-  .navbar .nav-links.active,
-  header nav ul.active,
-  header nav>div:last-child.active,
-  nav>ul.active,
-  .nav-menu.active {
-    right: 0;
-  }
-
-  nav ul li a,
-  .nav-links li a,
-  .nav-menu a {
-    font-size: 1.2rem !important;
-  }
-
-  /* Hero responsive */
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  section {
-    padding: 3rem 1rem !important;
-  }
-
-  /* Fix any horizontal overflow */
+  /* Only keeping essential overflow fix */
   body {
     overflow-x: hidden;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.6rem !important;
-  }
-
-  h2 {
-    font-size: 1.4rem !important;
-  }
-
-  p {
-    font-size: 0.95rem !important;
   }
 }
 
