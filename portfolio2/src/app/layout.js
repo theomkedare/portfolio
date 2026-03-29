@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Background from "./components/Background";
 import icon from "./favicon.png";
 import { Analytics } from "@vercel/analytics/next";
@@ -60,8 +61,9 @@ export default function RootLayout({ children }) {
           <Background />
           <Navbar />
 
-          <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-10 pt-32 pb-16">
+          <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-10 pt-32 pb-8">
             {children}
+            <Footer />
           </main>
         </ThemeProvider>
 

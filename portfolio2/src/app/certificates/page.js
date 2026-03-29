@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const certificates = [
@@ -159,8 +160,33 @@ const certificates = [
 
 const categories = ["All", ...new Set(certificates.map(c => c.category))];
 
+const certificateDescriptions = {
+  1: "An extensive specialization covering modern React components, hooks, performance optimization, and advanced patterns for building scalable user interfaces.",
+  2: "Gained hands-on experience in building server-rendered and statically generated web applications using Next.js, along with robust API routes.",
+  3: "Learned foundational image processing techniques utilizing MATLAB to manipulate, analyze, and enhance digital images for computer vision applications.",
+  4: "Deep dive into React architectures inherently handling complex state management, testing strategies, and deeply optimizing rendering components.",
+  5: "Developed strong, robust APIs and microservices using Node.js and Express, emphasizing secure backend architecture and database integration.",
+  6: "Built foundational knowledge in NoSQL document database concepts, exploring aggregation, advanced data modeling, and performance optimization.",
+  7: "Mastered fundamental concepts of React, including component lifecycles, structured props, and standard state hooks for dynamic UI rendering.",
+  8: "Explored relational database concepts, mastering complex SQL querying operations including JOINs, functional subqueries, and structured analytics.",
+  9: "Polished critical problem-solving skills utilizing key structures like trees, hash maps, and graphs alongside optimized algorithmic patterns.",
+  10: "Built accessible and highly responsive user interfaces natively relying on robust HTML5 structures, modern CSS features, and pure JavaScript functionality.",
+  11: "Gained insights into taking technological innovations from concept to market, evaluating product-market fits, and navigating sustainable startup strategies.",
+  12: "Learned the foundational lifecycle process of structured data, utilizing Google-centric tools to organize and derive meaningful strategic insights.",
+  13: "Pushed beyond the basics of web design by mastering scalable grid systems, flexbox modules, keyframe animations, and strict responsive breakpoints.",
+  14: "Developed core fluency in advanced JavaScript paradigms, focusing deeply on modern ES6+ syntaxes, functional programming, and secure state handling.",
+  15: "Tackled comprehensive data extraction techniques utilizing robust Python libraries to scrub, clean, pattern-match, and visualize data structures."
+};
+
 export default function Certificates() {
   const [filter, setFilter] = useState("All");
+  const [selectedId, setSelectedId] = useState(null);
+
+  useEffect(() => {
+    if (selectedId) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+    return () => { document.body.style.overflow = "auto"; };
+  }, [selectedId]);
 
   const filteredCertificates = useMemo(() => {
     return filter === "All" 
@@ -169,14 +195,14 @@ export default function Certificates() {
   }, [filter]);
 
   return (
-    <div className="min-h-screen pb-40">
+    <div className="min-h-screen pb-40 overflow-x-hidden">
       {/* Header Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-20"
       >
-        <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent italic">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent italic">
           CERTIFICATIONS
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-12 font-medium">
@@ -210,24 +236,29 @@ export default function Certificates() {
         <AnimatePresence mode="popLayout">
           {filteredCertificates.map((cert, index) => (
             <motion.div
-              layout
+              layoutId={`cert-card-${cert.id}`}
               key={cert.id}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: index * 0.1 }}
-              className="group relative bg-black/[0.01] dark:bg-white/[0.01] border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 flex flex-col"
+              onClick={() => setSelectedId(cert.id)}
+              className="group relative bg-black/[0.01] dark:bg-white/[0.01] border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 flex flex-col cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-900 border-b border-black/5 dark:border-white/5">
-                <img
+                <Image
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  priority={index < 6}
+                  quality={60}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 dark:from-[#050505] via-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                 
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 rounded-lg bg-black/50 backdrop-blur-md border border-white/10 text-[10px] font-black uppercase tracking-widest text-purple-400">
                     {cert.category}
                   </span>
@@ -273,6 +304,96 @@ export default function Certificates() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Detailed Modal Overlay */}
+      <AnimatePresence>
+        {selectedId && (
+          <>
+            {/* Dark Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedId(null)}
+              className="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm z-50 transition-opacity"
+            />
+            {/* Modal Content */}
+            <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none px-4">
+              <motion.div
+                layoutId={`cert-card-${selectedId}`}
+                className="bg-white dark:bg-[#0a0a0a] w-full max-w-2xl rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl pointer-events-auto flex flex-col max-h-[90vh]"
+              >
+                {(() => {
+                  const cert = certificates.find(c => c.id === selectedId);
+                  if (!cert) return null;
+                  return (
+                    <>
+                      <div className="relative aspect-[16/9] w-full bg-gray-100 dark:bg-gray-900 border-b border-black/10 dark:border-white/10">
+                        <Image
+                          src={cert.image}
+                          alt={cert.title}
+                          fill
+                          priority
+                          quality={80}
+                          className="object-cover"
+                        />
+                        <button
+                          onClick={() => setSelectedId(null)}
+                          className="absolute top-4 right-4 p-2 bg-black/50 text-white hover:bg-black rounded-full backdrop-blur-md transition-colors"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                      </div>
+                      <div className="p-8 overflow-y-auto">
+                        <div className="mb-6">
+                            <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-black uppercase tracking-widest border border-purple-500/20 mb-4 inline-block">
+                              {cert.category}
+                            </span>
+                            <h2 className="text-3xl font-black text-black dark:text-white mb-2">
+                              {cert.title}
+                            </h2>
+                            <p className="text-gray-500 dark:text-gray-400 font-bold uppercase tracking-tighter">
+                              {cert.issuer} • {cert.date}
+                            </p>
+                        </div>
+                        
+                        <div className="mb-8">
+                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+                            {certificateDescriptions[cert.id] || "Completed specific professional credential requirements as per industry standards."}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-wrap items-center justify-between gap-4 pt-6 md:pt-8 border-t border-black/5 dark:border-white/5">
+                          <div className="flex flex-wrap gap-2">
+                            {cert.skills.map((skill) => (
+                              <span
+                                key={skill}
+                                className="px-3 py-1 text-xs font-black bg-black/5 dark:bg-white/5 text-gray-500 dark:text-gray-400 rounded-md border border-black/5 dark:border-white/5"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                          {cert.credentialUrl && (
+                            <a
+                              href={cert.credentialUrl}
+                              target="_blank"
+                              className="w-full md:w-auto text-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-bold flex-shrink-0 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2"
+                            >
+                              Verify Credential
+                              <svg className="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </>
+                  );
+                })()}
+              </motion.div>
+            </div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Stats Section */}
       <div className="mt-40 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
