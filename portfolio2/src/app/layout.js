@@ -14,6 +14,9 @@ export const metadata = {
   title: "Om Kedare | Web Developer & CSE Student",
   description:
     "Om Kedare is a BTech CSE student and web developer building modern web apps using Next.js, Tailwind CSS and AI tools.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Om Kedare",
     "Web Developer",
