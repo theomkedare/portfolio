@@ -25,8 +25,12 @@ export default function Footer() {
         <div className="mt-20 pt-10 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">© 2026 Om Kedare. All Rights Reserved.</p>
           <div className="flex gap-8">
-            {['GitHub', 'LinkedIn', 'Instagram'].map(social => (
-              <a key={social} href="#" className="text-gray-500 hover:text-black dark:hover:text-white text-xs font-black uppercase tracking-widest transition-colors">{social}</a>
+            {[
+              { name: 'GitHub', url: 'https://github.com/theomkedare' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/omkedare/' },
+              { name: 'Instagram', url: 'https://www.instagram.com/omkedare.dev/' }
+            ].map(social => (
+              <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black dark:hover:text-white text-xs font-black uppercase tracking-widest transition-colors">{social.name}</a>
             ))}
           </div>
         </div>
