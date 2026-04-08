@@ -1,54 +1,90 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
+    id: 1,
     title: "CSNotes",
     desc: "A all in one place for CS Notes. Only for DYPIU Students.",
+    longDesc: "A comprehensive notes platform exclusively for DYPIU students, featuring unit-wise PDF access, Google OAuth authentication, and a clean study-focused interface. Built to eliminate scattered resources and bring everything under one roof.",
     github: "https://github.com/theomkedare/csnotes",
     demo: "https://csnotes.omkedare.dev/",
-    tech: ["Next.js", "Tailwind", "Motion"]
+    tech: ["Next.js", "Tailwind", "Motion"],
+    category: "Full Stack",
   },
   {
+    id: 2,
     title: "Cafe demo Website",
-    desc: "A demo Website for a Cafe.",
+    desc: "A beautifully designed, responsive demo website for a modern cafe.",
+    longDesc: "A visually stunning, fully responsive landing page for a modern cafe brand. Features animated menu sections, a warm color palette, smooth scroll interactions, and a contact form — designed to drive customer engagement.",
     github: "https://github.com/theomkedare/dreamy-sip-cafe",
     demo: "https://dreamysip.netlify.app/",
+    tech: ["React", "Tailwind", "JS"],
+    category: "Frontend",
   },
   {
-    title: "Smart Image Resizer Toolkit",
+    id: 3,
+    title: "Smart Image Resizer",
     desc: "A Full Stack WebApp, where you can Resize your images in various formats.",
+    longDesc: "A powerful full-stack image processing toolkit that lets users upload, resize, and convert images to formats like WebP, PNG, and JPEG. Powered by the Sharp library on the backend for blazing-fast processing.",
     github: "https://github.com/theomkedare/smart-image-toolkit",
     demo: "https://imagetools.omkedare.dev",
+    tech: ["Next.js", "Node.js", "Sharp"],
+    category: "Full Stack",
   },
   {
+    id: 4,
     title: "Instagram Reels Downloader",
     desc: "Full Stack Web app to download reels and videos from Instagram.",
+    longDesc: "A full-stack utility web app that lets users download Instagram Reels and videos by simply pasting a URL. Built with a React frontend and an Express backend handling media extraction — completely ad-free and fast.",
     github: "https://github.com/theomkedare/reels-downloader",
     demo: "https://reels.omkedare.dev/",
+    tech: ["React", "Express", "API"],
+    category: "Full Stack",
   },
   {
+    id: 5,
     title: "Gym demo Website",
-    desc: "A demo Website for Gym.",
+    desc: "A motivation-driven gym website with class schedules and membership plans.",
+    longDesc: "A high-energy gym landing page template featuring animated sections, class schedule displays, membership plan cards, and a bold design system built to convert visitors into members.",
     github: "https://github.com/theomkedare/gymDemo",
     demo: "https://gymdemo.omkedare.dev/",
+    tech: ["React", "Tailwind"],
+    category: "Frontend",
   },
   {
-    title: "React demoPortfolio Website",
-    desc: "My ReactJS final project demoPortfolio built with React.js.",
+    id: 6,
+    title: "React Portfolio V1",
+    desc: "My ReactJS personal portfolio built with React.js.",
+    longDesc: "My first-generation personal portfolio built entirely with React.js. It features smooth Framer Motion animations, a projects showcase, skills section, and contact form — designed with a minimalist philosophy focused on performance.",
     github: "https://github.com/theomkedare/react-portfolio",
     demo: "https://theomkedare.github.io/react-portfolio/",
+    tech: ["React.js", "Framer Motion"],
+    category: "Frontend",
   },
   {
-    title: "Portfolio Website",
+    id: 7,
+    title: "Portfolio Beast V2",
     desc: "My personal modern portfolio built with Next.js.",
+    longDesc: "The current version of my personal developer portfolio — a modern, high-performance site built with Next.js 15. Features glassmorphism effects, Framer Motion page transitions, a certificates gallery with modal previews, and a dark-first design system.",
     github: "https://github.com/theomkedare/portfolio",
     demo: "https://omkedare.dev",
+    tech: ["Next.js 15", "Tailwind", "Motion"],
+    category: "Full Stack",
   },
 ];
 
 export default function Home() {
+  const [selectedId, setSelectedId] = useState(null);
+
+  useEffect(() => {
+    if (selectedId) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+    return () => { document.body.style.overflow = "auto"; };
+  }, [selectedId]);
+
   return (
     <>
       {/* Hero */}
@@ -139,46 +175,136 @@ export default function Home() {
       {/* Projects */}
       <section id="projects" className="mb-40 px-4">
         <h3 className="text-4xl font-black mb-16 text-center text-black dark:text-white">Featured Projects</h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {projects.map((p) => (
-            <motion.div
-              key={p.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="group p-8 rounded-3xl border border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] hover:bg-black/[0.04] dark:hover:bg-white/[0.04] transition-all duration-500 hover:border-purple-500/30 relative overflow-hidden"
-            >
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" />
-              
-              <h4 className="text-2xl font-black mb-3 text-black dark:text-white group-hover:text-purple-500 transition-colors">
-                {p.title}
-              </h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
-                {p.desc}
-              </p>
-              
-              <div className="flex gap-6 items-center">
-                <a
-                  href={p.github}
-                  target="_blank"
-                  className="flex items-center gap-2 text-sm font-bold text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  Code
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-                </a>
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  className="flex items-center gap-2 text-sm font-bold text-black dark:text-gray-300 hover:text-purple-400 transition-colors"
-                >
-                  Live Demo
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <AnimatePresence mode="popLayout">
+            {projects.map((p, index) => (
+              <motion.div
+                layoutId={`home-project-card-${p.id}`}
+                key={p.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: index * 0.08 }}
+                onClick={() => setSelectedId(p.id)}
+                className="group p-8 rounded-3xl border border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] hover:bg-black/[0.04] dark:hover:bg-white/[0.04] transition-all duration-500 hover:border-purple-500/30 relative overflow-hidden cursor-pointer hover:-translate-y-1"
+              >
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" />
+
+                <div className="flex items-center gap-2 mb-4 flex-wrap">
+                  {p.tech && p.tech.map((t) => (
+                    <span key={t} className="text-[10px] font-black tracking-widest uppercase px-2 py-1 rounded bg-black/5 dark:bg-white/5 text-gray-400 dark:text-gray-500 group-hover:text-purple-500 transition-colors">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <h4 className="text-2xl font-black mb-3 text-black dark:text-white group-hover:text-purple-500 transition-colors">
+                  {p.title}
+                </h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
+                  {p.desc}
+                </p>
+
+                <div className="flex gap-4">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex-1 text-center py-2.5 rounded-xl bg-black/5 dark:bg-white/5 text-sm font-black text-gray-600 dark:text-gray-300 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all border border-black/5 dark:border-white/5"
+                  >
+                    Code
+                  </a>
+                  <a
+                    href={p.demo}
+                    target="_blank"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex-1 text-center py-2.5 rounded-xl bg-black dark:bg-white text-white dark:text-black text-sm font-black hover:opacity-80 transition-all shadow-lg active:scale-95"
+                  >
+                    Demo
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Wide View Modal for Home Projects */}
+        <AnimatePresence>
+          {selectedId && (() => {
+            const p = projects.find((proj) => proj.id === selectedId);
+            if (!p) return null;
+            return (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setSelectedId(null)}
+                  className="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm z-50"
+                />
+                <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none px-4">
+                  <motion.div
+                    layoutId={`home-project-card-${selectedId}`}
+                    className="bg-white dark:bg-[#0a0a0a] w-full max-w-2xl rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl pointer-events-auto flex flex-col max-h-[90vh]"
+                  >
+                    <div className="relative p-8 pb-0">
+                      <button
+                        onClick={() => setSelectedId(null)}
+                        className="absolute top-6 right-6 p-2 bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-black/10 dark:hover:bg-white/20 rounded-full transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-black uppercase tracking-widest border border-purple-500/20">
+                          {p.category}
+                        </span>
+                        <span className="px-3 py-1 rounded-lg bg-green-500/10 text-green-500 text-[10px] font-black uppercase tracking-widest border border-green-500/20">
+                          Live
+                        </span>
+                      </div>
+                      <h2 className="text-3xl font-black text-black dark:text-white mb-2 pr-10">{p.title}</h2>
+                    </div>
+
+                    <div className="mx-8 mt-6 border-t border-black/5 dark:border-white/10" />
+
+                    <div className="p-8 overflow-y-auto flex flex-col gap-6">
+                      <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">About This Project</h4>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">{p.longDesc}</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Tech Stack</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {p.tech && p.tech.map((t) => (
+                            <span key={t} className="px-3 py-1 text-xs font-black bg-black/5 dark:bg-white/5 text-gray-500 dark:text-gray-400 rounded-md border border-black/5 dark:border-white/5">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-black/5 dark:border-white/10">
+                        <a href={p.github} target="_blank" className="flex-1 text-center px-6 py-3 rounded-xl bg-black/5 dark:bg-white/5 text-sm font-black text-gray-600 dark:text-gray-300 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all border border-black/5 dark:border-white/5 flex items-center justify-center gap-2">
+                          View Code
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </a>
+                        <a href={p.demo} target="_blank" className="flex-1 text-center px-6 py-3 rounded-xl bg-black dark:bg-white text-white dark:text-black text-sm font-black hover:opacity-80 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
+                          Live Demo
+                          <svg className="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </>
+            );
+          })()}
+        </AnimatePresence>
       </section>
 
       {/* Skills Marquee */}

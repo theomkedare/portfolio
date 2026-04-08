@@ -155,7 +155,27 @@ const certificates = [
     category: "AI & ML",
     credentialUrl: "https://coursera.org/verify/S8P5NYA7O6DU",
     skills: ["Python", "Data Mining"],
-  }
+  },
+  {
+    id: 16,
+    title: "Version Control",
+    issuer: "Meta",
+    date: "Apr 2026",
+    image: "/certificates/Coursera VC.jpg",
+    category: "Development",
+    credentialUrl: "https://coursera.org/verify/JXPT98DAR0DX",
+    skills: ["Version Control", "Git", "GitHub"],
+  },
+  {
+    id: 17,
+    title: "DevOps and AI on AWS: Upgrading Apps with Generative AI",
+    issuer: "AWS",
+    date: "Apr 2026",
+    image: "/certificates/Coursera AWSDevOps.jpg",
+    category: "AI & ML",
+    credentialUrl: "https://coursera.org/verify/YUSQFHOI3KUS",
+    skills: ["AWS", "DevOps", "Generative AI"],
+  },
 ];
 
 const categories = ["All", ...new Set(certificates.map(c => c.category))];
