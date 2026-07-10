@@ -116,6 +116,12 @@ export default function Home() {
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-[240px] sm:max-w-none">
           <a
+            href="/courses"
+            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-black text-sm hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl text-center flex items-center justify-center"
+          >
+            EXPLORE COURSES
+          </a>
+          <a
             href="/projects"
             className="px-6 py-3 rounded-2xl bg-black dark:bg-white text-white dark:text-black font-black text-sm hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-2xl active:scale-95 text-center"
           >

@@ -57,9 +57,31 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Om Kedare",
+    "url": "https://omkedare.dev",
+    "image": "https://omkedare.dev/favicon.png",
+    "sameAs": [
+      "https://github.com/theomkedare",
+      "https://www.linkedin.com/in/omkedare/",
+      "https://www.instagram.com/omkedare.dev/"
+    ],
+    "jobTitle": "Web Developer & BTech CSE Student",
+    "knowsAbout": [
+      "Next.js", "React.js", "TypeScript", "Tailwind CSS", 
+      "Full Stack Development", "Node.js", "AI-driven Automation"
+    ]
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} selection:bg-purple-500/30 relative min-h-screen transition-colors duration-300`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeProvider>
           <Background />
           <Navbar />
