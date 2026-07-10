@@ -183,7 +183,7 @@ export default function CoursesClient({ courses }: CoursesClientProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-black mb-6 tracking-tighter leading-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent italic uppercase"
+          className="text-4xl sm:text-6xl md:text-7xl font-black mb-6 tracking-tighter leading-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent italic uppercase pr-4"
         >
           Master the Web & AI
         </motion.h1>
